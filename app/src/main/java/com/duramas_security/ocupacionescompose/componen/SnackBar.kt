@@ -11,13 +11,11 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun SnackBar(informacion: String) {
     Snackbar(
-    action = {
-        Button(onClick = { /*TODO*/ }) {
-
-        }
-    },
-    modifier = Modifier.padding(8.dp)
-    ) {
+        action = {
+            Button(onClick = { /*TODO*/ }) { }
+        },
+        modifier = Modifier.padding(8.dp)
+    ){
         Text(text = informacion)
     }
 }

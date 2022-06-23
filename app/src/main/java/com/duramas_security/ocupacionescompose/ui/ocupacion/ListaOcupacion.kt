@@ -1,12 +1,10 @@
 package com.duramas_security.ocupacionescompose.ui.ocupacion
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Text
@@ -49,8 +47,7 @@ fun ListaOcupacion(
                         .padding(8.dp)
                         .background(
                             color = Azul700, shape = RoundedCornerShape(10.dp)
-                        )
-                        ,
+                        ) ,
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ) {
