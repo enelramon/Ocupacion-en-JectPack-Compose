@@ -1,24 +1,25 @@
 package com.duramas_security.ocupacionescompose.componen
 
+import android.util.Log
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.outlined.Add
-import androidx.compose.material.icons.outlined.Delete
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.duramas_security.ocupacionescompose.ui.theme.Azul200
-import com.duramas_security.ocupacionescompose.ui.theme.White000
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun BarraTitulo(titulo:String) {
+fun BarraTitulo(titulo:String,_counter : Int = 5) {
+
+    var counter by rememberSaveable { mutableStateOf(_counter)}
+
     TopAppBar(
         backgroundColor =  Azul200,
         title = {
@@ -32,9 +33,9 @@ fun BarraTitulo(titulo:String) {
             )
         },
         actions = {
-            IconButton(onClick = { /*TODO*/ }) {
+            IconButton(onClick = {counter++ }) {
                 BadgeBox(
-                    badgeContent ={ Text(text = "5") },
+                    badgeContent ={ Text(counter.toString()) },
                     backgroundColor = Color.White
                 ) {
                     Icon(
