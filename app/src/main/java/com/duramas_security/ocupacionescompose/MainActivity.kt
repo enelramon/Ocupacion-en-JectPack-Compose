@@ -14,18 +14,20 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            val navController = rememberNavController()
-            NavHost(navController = navController,
-                startDestination = "guardarocupacion"
-            ) {
-                composable("guardarocupacion") {
-                    GuardarOcupacion(navController)
-                }
-                composable("lista") {
-                    ListaOcupacion()
-                }
-            }
+        setContent {            
+             Surface(color = MaterialTheme.colors.primary) {
+                 val navController = rememberNavController()
+                NavHost(navController = navController,
+                    startDestination = "guardarocupacion"
+                ) {
+                    composable("guardarocupacion") {
+                        GuardarOcupacion(navController)
+                    }
+                    composable("lista") {
+                        ListaOcupacion()
+                    }
+                }                
+            }                
         }
     }
 }
